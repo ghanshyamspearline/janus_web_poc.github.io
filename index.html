@@ -68,9 +68,23 @@
                 <hr>
                 <div class="status fw-light"></div>
                 <div class="form-outline mb-4">
-                  <input type="text" id="_sipUri" class="form-control form-control-lg" placeholder="sip:XXXX@X.X.X.X" ="sip:1002@79.125.21.138"/>
+                  <input type="text" id="_sipUri" class="form-control form-control-lg" placeholder="sip:XXXX@X.X.X.X"/>
                   <label class="form-label" for="_sipUri">SIP Uri</label>
                 </div>
+                <div class="row">
+                	<div class="col-md">
+		                <div class="form-outline mb-4 col-6">
+		                  <input type="text" id="_extraHeaderName" class="form-control form-control-lg" placeholder="Spearline-Header"/>
+		                  <label class="form-label" for="_extraHeaderName">Extra Header Name</label>
+		                </div>
+	               	</div>
+	               	<div class="col-md">
+		                <div class="form-outline mb-4 col-6">
+		                  <input type="text" id="_extraHeaderValue" class="form-control form-control-lg" placeholder="" />
+		                  <label class="form-label" for="_extraHeaderValue">Extra Header Value</label>
+		                </div>
+		            </div>
+		        </div>
                 <div class="panel-body" id="videoright"></div>
                 <div class="col-12">
                 	<button class="btn btn-call" onclick="doCall()">Dial</button>

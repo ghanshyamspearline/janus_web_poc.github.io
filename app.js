@@ -247,15 +247,21 @@ const doCall = () => {
 const actuallyDoCall = (handle, _sipUri) => {
 	handle.doAudio = true;
 	let tracks = [{ type: 'audio', capture: true, recv: true }];
+
 	handle.createOffer(
 		{
 			tracks: tracks,
 			success: function(jsep) {
 				Janus.debug("Got SDP!", jsep);
-				var body = { request: "call", uri: _sipUri , headers: {
-								"X-My-Header": "value",
-								"X-AnotherHeader": "another string"
-							}};
+				const _extraHeaderName = $('#_extraHeaderName').val();
+				const _extraHeaderValue = $('#_extraHeaderValue').val();
+				let _extraHeaders = null;
+				if(!isEmpty(_extraHeaderName) && !isEmpty(_extraHeaderValue)) {
+					_extraHeaders : {
+						_extraHeaderName: _extraHeaderValue
+					}
+				}
+				var body = { request: "call", uri: _sipUri , headers: _extraHeaders };
 				body["autoaccept_reinvites"] = false;
 				handle.send({ message: body, jsep: jsep });
 			},
