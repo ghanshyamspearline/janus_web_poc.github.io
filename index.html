@@ -1,0 +1,97 @@
+<title>
+	Janus Gateway Tester - Spearline
+</title>
+<!-- Font Awesome -->
+<link
+  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+  rel="stylesheet"
+/>
+<!-- Google Fonts -->
+<link
+  href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap"
+  rel="stylesheet"
+/>
+<!-- MDB -->
+<link
+  href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/6.1.0/mdb.min.css"
+  rel="stylesheet"
+/>
+
+<section id="_config">
+  <div class="mask d-flex align-items-center h-100" style="background-color: #D6D6D6;">
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-12 col-md-8 col-lg-6 col-xl-5">
+          <div class="card" style="border-radius: 1rem;">
+            <div class="card-body p-5 text-center">
+
+              <div class="my-md-5 pb-5">
+
+                <i class="fas fa-user-astronaut fa-3x my-5"></i>
+
+                <div class="form-outline mb-4">
+                  <input type="text" id="_sipUsername" class="form-control form-control-lg" />
+                  <label class="form-label" for="typeEmail">SIP Username</label>
+                </div>
+
+                <div class="form-outline mb-5">
+                  <input type="text" id="_sipServer" class="form-control form-control-lg" />
+                  <label class="form-label" for="typePassword">SIP Server</label>
+                </div>
+
+                <button class="btn" onclick="initPhone()">Initiate</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="_phone" style="display: none;">
+	<div class="mask d-flex align-items-center h-100" style="background-color: #D6D6D6;">
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-12 col-md-8 col-lg-6 col-xl-5">
+          <div class="card" style="border-radius: 1rem;">
+            <div class="card-body p-5 text-center">
+              <div class="my-md-5 pb-5">
+                <div class="col-12">
+                	<div class="row">
+                		<i class="fas fa-user-astronaut fa-3x my-5"></i>
+                	</div>
+                	<div class="row">
+                		<a onclick="doLogout()" style="cursor: pointer;"><i class="fa fa-sign-out"></i> Logout</a>
+                	</div>
+                </div>
+                <hr>
+                <div class="status fw-light"></div>
+                <div class="form-outline mb-4">
+                  <input type="text" id="_sipUri" class="form-control form-control-lg" placeholder="sip:XXXX@X.X.X.X" ="sip:1002@79.125.21.138"/>
+                  <label class="form-label" for="_sipUri">SIP Uri</label>
+                </div>
+                <div class="panel-body" id="videoright"></div>
+                <div class="col-12">
+                	<button class="btn btn-call" onclick="doCall()">Dial</button>
+            	</div>
+                <div class="col-12"><button class="btn btn-hangup invisible" onclick="doHangup()">Hangup</button></div>
+
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- MDB -->
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/webrtc-adapter/8.1.1/adapter.min.js" ></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.9.1/jquery.min.js" ></script>
+<script type="text/javascript" src="janus.js"></script>
+<script type="text/javascript" src="settings.js"></script>
+<script type="text/javascript" src="app.js"></script>
+<script
+  type="text/javascript"
+  src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/6.1.0/mdb.min.js"
+></script>
