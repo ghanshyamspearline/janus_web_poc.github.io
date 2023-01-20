@@ -212,6 +212,7 @@ const initJanus = () => {
                                 error: function(error) {
 									Janus.error(error);
 									alert(error);
+									doLogout();
 									window.location.reload();
 								},
 								destroyed: function() {
